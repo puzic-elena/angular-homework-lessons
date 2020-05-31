@@ -1,0 +1,16 @@
+<div class="card">
+        <app-lessons-details
+          [lessons]="lessons"
+          (add)="onAdd($event)"
+          (select)="onSelect($event)">
+        </app-lessons-details>
+      </div>
+      <div>
+        <h4 [ngStyle]="{color: lessons.length > 5 ? ' #25afa0' : '#000'}">You have {{ lessons.length}} lessons</h4>
+        <h4>Total duration {{totalHours}} h</h4>
+        <app-selected-lesson
+          [selectedLesson]="selectedLesson"
+          (edit)="onEdit($event)"
+          (delete)="onDelete($event)"
+        ></app-selected-lesson>
+      </div>

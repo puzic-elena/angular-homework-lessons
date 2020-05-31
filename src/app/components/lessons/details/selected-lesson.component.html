@@ -1,0 +1,38 @@
+<div *ngIf="selectedLesson">
+  <form #formLessons="ngForm" (ngSubmit)="onEditLesson(formLessons)" class="row form">
+    <label for="name">Edit Lesson</label>
+    <div class="form-group">
+      <input type="text"
+             id="name"
+             [ngClass]="{ 'is-invalid': submitted }"
+             class="form-control"
+             [(ngModel)]="selectedLesson.name"
+             name="name"
+             required>
+      <div [hidden]="selectedLesson.name || formLessons.submitted"
+           class="alert alert-danger">
+        Lesson name is required
+      </div>
+    </div>
+    <label for="hour">Edit Hours</label>
+    <div class="form-group">
+      <input type="number"
+             id="hour"
+             class="form-control"
+             [(ngModel)]="selectedLesson.hour"
+             name="hour"
+             required>
+      <div [hidden]="selectedLesson.hour || formLessons.submitted"
+           class="alert alert-danger">
+        Hour is required
+      </div>
+    </div>
+    <button
+      class="btn btn-success"
+      [disabled]="!formLessons.valid"
+      (click)="onEditLesson(formLessons)">Edit and Save</button>
+    <button
+      class="btn btn-danger"
+      (click)="onDeleteLesson(selectedLesson)">Delete</button>
+  </form>
+</div>
