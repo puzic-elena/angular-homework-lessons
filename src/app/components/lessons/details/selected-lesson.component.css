@@ -1,0 +1,15 @@
+.btn {
+  background-color: #25afa0;
+  border: none;
+  color: white;
+  padding: 15px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+}
+
+.table {
+  margin: 10px;
+  padding: 10px;
+}
